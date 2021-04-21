@@ -3,8 +3,20 @@ body, html {
 	width: 100%;
 	height: 100%;
 	overflow: scroll;
-	background: linear-gradient(-55deg, rgb(249, 212, 219),rgb(220, 228, 250));
+	background: var(--background-gradi);
+	color: var(--font-color);
 	font-family: 'Noto Sans KR', sans-serif;
+}
+
+header {
+	display: flex;
+}
+header * {
+	margin: auto;
+}
+header .Title{
+	font-size: 2rem;
+	font-weight: bold;
 }
 
 .ChatBox {
@@ -22,9 +34,18 @@ body, html {
 		width: 95%;
 	}
 }
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
 	body, html {
-		background: linear-gradient(-45deg, rgb(106, 44, 102),rgb(47, 55, 88));
+		background: var(--background-gradi);
 		color: white;
 	}
+} */
+
+:root {
+    --background-gradi: linear-gradient(-55deg, rgb(249, 212, 219),rgb(220, 228, 250));
+	--font-color: black;
+}
+[data-theme="dark"] {
+    --background-gradi: linear-gradient(-45deg, rgb(106, 44, 102),rgb(47, 55, 88));
+	--font-color: white;
 }

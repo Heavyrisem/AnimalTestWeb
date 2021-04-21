@@ -9,10 +9,14 @@ class UserInput extends React.Component<props, any> {
     render() {
         return (
             <div className="Message">
-                <div className="MsgBefore" style={{backgroundColor: "rgb(100, 100, 100)"}}></div>
+                <div className="MsgBefore Black"></div>
                 <div className="Msg">
                     <select>
-                        <option value="">asdlkfjal;skdj</option>
+                        <option value="">Selection</option>
+                        <option value="">Selection</option>
+                        <option value="">Selection</option>
+                        <option value="">Selection</option>
+                        <option value="">Selection</option>
                     </select>
                     <span className="UserSubmit">제출</span>
                 </div>

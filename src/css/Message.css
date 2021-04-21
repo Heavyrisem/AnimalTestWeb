@@ -6,10 +6,13 @@
 }
 
 .MsgBefore {
-    background-color: rgb(189, 189, 189);
+    background-color: rgb(255, 255, 255);
     width: 5px;
     margin-right: 0.8rem;
     border-radius: 1rem;
+}
+.MsgBefore.Black {
+    background-color: var(--background-color);
 }
 .Msg {
     max-width: 90%;
@@ -31,8 +34,15 @@
         padding: 0.2rem 0;
     }    
 }
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
     .MsgBefore {
-        background-color: white!important;
+        background-color: white;
     }
+} */
+
+:root {
+    --background-color: rgb(100, 100, 100)
+}
+[data-theme="dark"] {
+    --background-color: rgb(255, 255, 255);
 }

@@ -11,7 +11,7 @@ class Message extends React.Component<props, any> {
     render() {
         return (
             <div className="Message">
-                <div className="MsgBefore" style={this.props.isBot? {backgroundColor: "rgb(100, 100, 100)"}:{}}></div>
+                <div className={(this.props.isBot? "Black ":"") + "MsgBefore"}></div>
                 <div className="Msg">{this.props.context}</div>
             </div>
         )
