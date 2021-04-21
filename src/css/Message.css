@@ -1,0 +1,38 @@
+.Message {
+    margin: 3.5% 0;
+    display: flex;
+
+    font-size: 0.9rem;
+}
+
+.MsgBefore {
+    background-color: rgb(189, 189, 189);
+    width: 5px;
+    margin-right: 0.8rem;
+    border-radius: 1rem;
+}
+.Msg {
+    max-width: 90%;
+}
+
+.UserSubmit {
+    color: rgb(3, 116, 219);
+    font-weight: bold;
+}
+.UserSubmit::before {
+    content: " ";
+}
+
+@media screen and (min-width: 1000px) {
+    .Message {
+        margin: 1.5% 0;
+    }
+    .Message span {
+        padding: 0.2rem 0;
+    }    
+}
+@media (prefers-color-scheme: dark) {
+    .MsgBefore {
+        background-color: white!important;
+    }
+}
