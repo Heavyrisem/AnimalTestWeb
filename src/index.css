@@ -12,7 +12,7 @@ body, html, #root {
 }
 
 header {
-	margin: 1rem 0;
+	padding: 1rem 0rem;
 	display: flex;
 }
 header * {
@@ -21,6 +21,9 @@ header * {
 header .Title{
 	font-size: 2rem;
 	font-weight: bold;
+}
+header .Title + span {
+	flex: .5;
 }
 
 .ChatBox {
@@ -32,6 +35,9 @@ header .Title{
 	overflow: scroll;
 }
 
+::-webkit-scrollbar {
+	display: none;
+}
 
 @media screen and (max-width: 1200px) {
 	.ChatBox {

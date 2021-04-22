@@ -32,6 +32,9 @@ select {
     padding: 0.1rem 0.3rem;
     /* line-height: 1.2rem; */
 }
+option {
+    color: black;
+}
 .UserSubmit {
     cursor: pointer;
     color: rgb(3, 116, 219);

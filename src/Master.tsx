@@ -25,7 +25,7 @@ class Master extends React.Component<any, state> {
     constructor(props: any) {
         super(props);
         this.state = {
-            UserAnswerTurn: true,
+            UserAnswerTurn: false,
             CurrentStep: 0,
             MaxStep: 0,
             Messages: [],
@@ -50,7 +50,8 @@ class Master extends React.Component<any, state> {
 
         this.setState({
             Messages: this.state.Messages.concat(Messages),
-            MaxStep: TestInfo.Questions-1
+            MaxStep: TestInfo.Questions-1,
+            UserAnswerTurn: true
         }, () => {
             this.GetQuestion();
         })
@@ -77,7 +78,10 @@ class Master extends React.Component<any, state> {
 
     async UserAnswer(answer: string) {
         if (answer != "") {
-            this.setState({UserAnswerTurn: false});
+            this.setState({
+                UserAnswerTurn: false,
+                Messages: this.state.Messages.concat({content: answer, isBot: false})
+            });
             const ServerResponse = await fetch(`${Config.Endpoint}/Answer`, {
                 method: "POST",
                 body: JSON.stringify({
@@ -90,7 +94,6 @@ class Master extends React.Component<any, state> {
             if (Result.answerResult) {
                 this.setState({
                     CurrentStep: this.state.CurrentStep+1,
-                    Messages: this.state.Messages.concat({content: answer, isBot: false}),
                     Scores: this.state.Scores.concat(Result.answerResult)
                 }, () => {
                     if (this.state.MaxStep < this.state.CurrentStep)
@@ -119,6 +122,10 @@ class Master extends React.Component<any, state> {
             },
             {
                 content: AnimalResult.Desc,
+                isBot: true
+            },
+            {
+                content: `${AnimalResult.Name}은 `,
                 isBot: true
             }
         ]
