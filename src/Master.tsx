@@ -106,7 +106,7 @@ class Master extends React.Component<any, state> {
         const ServerResponse = await fetch(`${Config.Endpoint}/GetResult`, {
             method: "POST",
             body: JSON.stringify({
-                Score: this.state.Scores
+                Scores: this.state.Scores
             }),
             headers: {'content-type': 'application/json'}
         });
