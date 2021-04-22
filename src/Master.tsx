@@ -141,7 +141,7 @@ class Master extends React.Component<any, state> {
                 <header>
                     <span className="Title">Swift</span>
                     <span></span>
-                    <DarkMode />
+                    <span><DarkMode /></span>
                 </header>
                 <div className="ChatBox">
                     {
