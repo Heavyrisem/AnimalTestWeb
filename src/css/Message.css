@@ -3,10 +3,13 @@
     display: flex;
 
     font-size: 0.9rem;
+
+    animation-duration: 1s;
+    animation-name: MessageArrived;
 }
 
 .MsgBefore {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(195, 195, 195);
     width: 5px;
     margin-right: 0.8rem;
     border-radius: 1rem;
@@ -18,12 +21,37 @@
     max-width: 90%;
 }
 
+select {
+    appearance: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: var(--font-color);
+    border-color: var(--font-color);
+    border-radius: 0.3rem;
+    transition: color 0.4s;
+    
+    padding: 0.1rem 0.3rem;
+    /* line-height: 1.2rem; */
+}
 .UserSubmit {
+    cursor: pointer;
     color: rgb(3, 116, 219);
+    font-size: 0.8rem;
     font-weight: bold;
 }
 .UserSubmit::before {
     content: " ";
+}
+
+
+@keyframes MessageArrived {
+    from {
+        transform: translateY(20px);
+        opacity: 0.2;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
 }
 
 @media screen and (min-width: 1000px) {
@@ -41,8 +69,8 @@
 } */
 
 :root {
-    --background-color: rgb(100, 100, 100)
+    --background-color: rgb(65, 65, 65)
 }
 [data-theme="dark"] {
-    --background-color: rgb(255, 255, 255);
+    --background-color: rgb(195, 195, 195);
 }

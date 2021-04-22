@@ -4,9 +4,7 @@ import './index.css';
 import Master from './Master';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Master />
-  </React.StrictMode>,
+  <Master />,
   document.getElementById('root')
 );
 

@@ -13,10 +13,10 @@ class DarkMode extends React.Component<any, state> {
         this.state = {
             Dark: window.matchMedia('(prefers-color-scheme: dark)').matches
         }
-        this.ChangeMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
     }
 
     componentDidMount() {
+        this.ChangeMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
             this.ChangeMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
         })
@@ -36,7 +36,7 @@ class DarkMode extends React.Component<any, state> {
     render() {
         return (
             <label className="DarkModSwitch">
-                <input ref={(e)=>{this.Switch = e}} type="checkbox" checked={this.state.Dark} onClick={() => {this.ChangeMode(!this.state.Dark)}} />
+                <input ref={(e)=>{this.Switch = e}} type="checkbox" checked={this.state.Dark} onClick={() => {this.ChangeMode(!this.state.Dark)}} readOnly/>
                 <span className="Slider round"></span>
             </label>
         )
