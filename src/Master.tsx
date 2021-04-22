@@ -123,11 +123,11 @@ class Master extends React.Component<any, state> {
             {
                 content: AnimalResult.Desc,
                 isBot: true
-            },
-            {
-                content: `${AnimalResult.Name}은 `,
-                isBot: true
             }
+            // ,{
+            //     content: `${AnimalResult.Name}은 `,
+            //     isBot: true
+            // }
         ]
         
         this.setState({
