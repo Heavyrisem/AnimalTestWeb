@@ -113,7 +113,7 @@ class Master extends React.Component<any, state> {
             }),
             headers: {'content-type': 'application/json'}
         });
-        const AnimalResult: {Name: string, Desc: string} = await ServerResponse.json();
+        const AnimalResult: {Name: string, Desc: string, Percent: number} = await ServerResponse.json();
 
         const ResultMessage: Array<MessageT> = [
             {
@@ -124,10 +124,10 @@ class Master extends React.Component<any, state> {
                 content: AnimalResult.Desc,
                 isBot: true
             }
-            // ,{
-            //     content: `${AnimalResult.Name}은 `,
-            //     isBot: true
-            // }
+            ,{
+                content: `${AnimalResult.Name}은 전체 참여자 중 ${AnimalResult.Percent}% 에 속해요.`,
+                isBot: true
+            }
         ]
         
         this.setState({
